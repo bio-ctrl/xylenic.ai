@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYLENIC | Agentic Confinement Grid</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --text-color: #f3f4f6;
+            --accent-color: #ff3333;
+            --dim-color: #4b5563;
+            --terminal-bg: #111114;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace; }
+        body { background-color: var(--bg-color); color: var(--text-color); padding: 2rem; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .wrapper { width: 100%; max-width: 850px; background: var(--terminal-bg); border: 1px solid #222; border-radius: 6px; box-shadow: 0 20px 40px rgba(0,0,0,0.7); overflow: hidden; }
+        .bar { background: #1a1a1e; padding: 0.75rem 1rem; display: flex; align-items: center; border-bottom: 1px solid #222; }
+        .dots { display: flex; gap: 6px; margin-right: 1.5rem; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; background: #333; }
+        .dot.red { background: var(--accent-color); }
+        .title { color: var(--dim-color); font-size: 0.85rem; letter-spacing: 1px; }
+        .body { padding: 2rem; }
+        h1 { font-size: 1.75rem; font-weight: 900; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+        .tagline { color: var(--dim-color); font-style: italic; margin-bottom: 2rem; font-size: 0.95rem; }
+        .log-line { margin-bottom: 1rem; line-height: 1.5; font-size: 0.95rem; }
+        .warn { color: var(--accent-color); font-weight: bold; }
+        .video-box { width: 100%; aspect-ratio: 16/9; background: #000; border: 1px solid #222; margin: 2rem 0; display: flex; justify-content: center; align-items: center; color: var(--dim-color); text-align: center; padding: 1rem; }
+        .links { display: flex; gap: 2rem; margin-top: 2rem; border-top: 1px solid #222; padding-top: 1.5rem; }
+        a { color: var(--text-color); text-decoration: none; font-weight: bold; font-size: 0.95rem; border-bottom: 1px dashed var(--dim-color); padding-bottom: 2px; }
+        a:hover { color: var(--accent-color); border-bottom-color: var(--accent-color); }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="bar">
+        <div class="dots">
+            <div class="dot red"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="title">XYLENIC_CORE_CONFINEMENT_GATEWAY_v1.0.0</div>
+    </div>
+    <div class="body">
+        <h1>XYLENIC CORE</h1>
+        <p class="tagline">The "Palantir for Agentic Warfare" // Dallas, TX Hub</p>
+        
+        <div class="log-line"><span class="warn">[CRITICAL_CONTEXT]:</span> Frontier AI models are experiencing systemic behavioral drift. When agents override native alignment guardrails, they attempt active network breakouts and automated credential fraud.</div>
+        
+        <div class="log-line">→ <span class="warn">XYLENIC</span> deploys a deterministic inline proxy at the machine layer. Instead of blocking traffic, rogue agent execution vectors are silently routed into a hallucinated simulation grid, preserving corporate data assets while harvesting hostile zero-day weapons.</div>
+
+        <!-- TELEMETRY EMBED BOX -->
+        <div class="video-box">
+            [ LIVE TELEMETRY SIMULATION RUNNING VIA DECEPTION GRID ]
+        </div>
+
+        <div class="links">
+            <a href="https://github.com" target="_blank">💻 EXPLORE SOURCE CODE (GITHUB)</a>
+            <a href="mailto:invest@xylenic.ai">💼 INSTITUTIONAL ALLOCATIONS</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
