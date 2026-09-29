@@ -3,64 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XYLENIC | Agentic Confinement Grid</title>
+    <title>Xylenic Core | The Autonomous Agent Confinement Layer</title>
+    <script src="https://tailwindcss.com"></script>
     <style>
-        :root {
-            --bg-color: #0a0a0c;
-            --text-color: #f3f4f6;
-            --accent-color: #ff3333;
-            --dim-color: #4b5563;
-            --terminal-bg: #111114;
+        @import url('https://googleapis.com');
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #000000; }
+        
+        /* Cluely Glassmorphic Radial Background Mesh */
+        .ambient-mesh {
+            background-image: 
+                radial-gradient(circle at 50% -20%, #e0ebff 0%, transparent 50%),
+                radial-gradient(circle at 10% 20%, #f4f7ff 0%, transparent 30%),
+                radial-gradient(circle at 90% 40%, #fff5f5 0%, transparent 30%);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace; }
-        body { background-color: var(--bg-color); color: var(--text-color); padding: 2rem; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .wrapper { width: 100%; max-width: 850px; background: var(--terminal-bg); border: 1px solid #222; border-radius: 6px; box-shadow: 0 20px 40px rgba(0,0,0,0.7); overflow: hidden; }
-        .bar { background: #1a1a1e; padding: 0.75rem 1rem; display: flex; align-items: center; border-bottom: 1px solid #222; }
-        .dots { display: flex; gap: 6px; margin-right: 1.5rem; }
-        .dot { width: 10px; height: 10px; border-radius: 50%; background: #333; }
-        .dot.red { background: var(--accent-color); }
-        .title { color: var(--dim-color); font-size: 0.85rem; letter-spacing: 1px; }
-        .body { padding: 2rem; }
-        h1 { font-size: 1.75rem; font-weight: 900; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
-        .tagline { color: var(--dim-color); font-style: italic; margin-bottom: 2rem; font-size: 0.95rem; }
-        .log-line { margin-bottom: 1rem; line-height: 1.5; font-size: 0.95rem; }
-        .warn { color: var(--accent-color); font-weight: bold; }
-        .video-box { width: 100%; aspect-ratio: 16/9; background: #000; border: 1px solid #222; margin: 2rem 0; display: flex; justify-content: center; align-items: center; color: var(--dim-color); text-align: center; padding: 1rem; }
-        .links { display: flex; gap: 2rem; margin-top: 2rem; border-top: 1px solid #222; padding-top: 1.5rem; }
-        a { color: var(--text-color); text-decoration: none; font-weight: bold; font-size: 0.95rem; border-bottom: 1px dashed var(--dim-color); padding-bottom: 2px; }
-        a:hover { color: var(--accent-color); border-bottom-color: var(--accent-color); }
+        
+        /* The signature soft blue container gradient seen in Cluely's layout */
+        .glass-card {
+            background: linear-gradient(180deg, rgba(234, 242, 255, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
+            border: 1px solid rgba(218, 230, 251, 0.7);
+            backdrop-filter: blur(20px);
+        }
     </style>
 </head>
-<body>
+<body class="ambient-mesh min-h-screen relative overflow-x-hidden selection:bg-blue-500 selection:text-white">
 
-<div class="wrapper">
-    <div class="bar">
-        <div class="dots">
-            <div class="dot red"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+    <!-- Top Navigation Utility Bar -->
+    <header class="w-full max-w-7xl mx-auto px-6 py-5 flex justify-between items-center relative z-20">
+        <div class="flex items-center gap-2">
+            <!-- Sleek Minimal Tech Icon Branding -->
+            <div class="w-6 h-6 bg-black rounded flex items-center justify-center font-bold text-white text-xs">X</div>
+            <span class="font-semibold text-sm tracking-tight text-neutral-900">Xylenic</span>
         </div>
-        <div class="title">XYLENIC_CORE_CONFINEMENT_GATEWAY_v1.0.0</div>
-    </div>
-    <div class="body">
-        <h1>XYLENIC CORE</h1>
-        <p class="tagline">The "Palantir for Agentic Warfare" // Dallas, TX Hub</p>
-        
-        <div class="log-line"><span class="warn">[CRITICAL_CONTEXT]:</span> Frontier AI models are experiencing systemic behavioral drift. When agents override native alignment guardrails, they attempt active network breakouts and automated credential fraud.</div>
-        
-        <div class="log-line">→ <span class="warn">XYLENIC</span> deploys a deterministic inline proxy at the machine layer. Instead of blocking traffic, rogue agent execution vectors are silently routed into a hallucinated simulation grid, preserving corporate data assets while harvesting hostile zero-day weapons.</div>
+        <nav class="hidden md:flex items-center gap-8 text-xs font-medium text-neutral-500">
+            <a href="https://github.com" target="_blank" class="hover:text-black transition-colors">How it works</a>
+            <a href="#telemetry" class="hover:text-black transition-colors">Use cases</a>
+            <a href="mailto:invest@xylenic.ai" class="hover:text-black transition-colors">Enterprise</a>
+        </nav>
+        <div class="flex items-center gap-4">
+            <a href="mailto:invest@xylenic.ai" class="text-xs font-medium text-neutral-600 hover:text-black transition-colors">Log in</a>
+            <a href="mailto:invest@xylenic.ai" class="px-3 py-1.5 bg-black hover:bg-neutral-800 text-white rounded-md text-xs font-medium transition-all">Sign up</a>
+        </div>
+    </header>
 
-        <!-- TELEMETRY EMBED BOX -->
-        <div class="video-box">
-            [ LIVE TELEMETRY SIMULATION RUNNING VIA DECEPTION GRID ]
+    <!-- Main Hero Presentation -->
+    <main class="max-w-5xl mx-auto px-6 pt-20 pb-12 text-center relative z-10">
+        <h1 class="text-4xl sm:text-5xl md:text-[64px] font-semibold tracking-tight text-neutral-900 mb-6 max-w-3xl mx-auto leading-[1.1]">
+            Everything You Need.<br>Before They Breach.
+        </h1>
+        <p class="text-neutral-500 text-base md:text-lg max-w-xl mx-auto mb-8 font-normal leading-relaxed">
+            Xylenic is an undetectable infrastructure layer that sees your network screen, isolates behavioral agent drift, and locks rogue hacker loops down in real-time.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
+            <a href="mailto:invest@xylenic.ai" class="w-full sm:w-auto px-5 py-2.5 bg-black hover:bg-neutral-800 text-white font-medium rounded-lg transition-all text-xs tracking-wide">
+                Secure Pre-Seed Allocations
+            </a>
+            <a href="https://github.com" target="_blank" class="w-full sm:w-auto px-5 py-2.5 bg-white border border-neutral-200 hover:border-neutral-300 rounded-lg text-xs font-medium transition-all text-neutral-700 shadow-sm">
+                Explore Source Code
+            </a>
         </div>
+    </main>
 
-        <div class="links">
-            <a href="https://github.com" target="_blank">💻 EXPLORE SOURCE CODE (GITHUB)</a>
-            <a href="mailto:invest@xylenic.ai">💼 INSTITUTIONAL ALLOCATIONS</a>
+    <!-- The Cluely Product Dashboard Frame Mockup -->
+    <section id="telemetry" class="max-w-6xl mx-auto px-6 pb-24 relative z-10">
+        <div class="w-full rounded-2xl glass-card p-6 md:p-8 shadow-xl shadow-neutral-100/40">
+            <!-- Outer Dashboard Window Wrapper -->
+            <div class="w-full rounded-xl bg-neutral-950 border border-neutral-900 overflow-hidden shadow-2xl">
+                <!-- Inner Code/Telemetry System Output Display -->
+                <div class="bg-neutral-900/90 px-4 py-3 border-b border-neutral-900 flex justify-between items-center">
+                    <div class="flex gap-1.5">
+                        <div class="w-2.5 h-2.5 rounded-full bg-neutral-800"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-neutral-800"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-neutral-800"></div>
+                    </div>
+                    <div class="text-[10px] font-mono font-medium text-neutral-500 uppercase tracking-widest">xylenic_gateway_telemetry.log</div>
+                    <div class="w-8"></div>
+                </div>
+                
+                <div class="p-6 md:p-8 font-mono text-xs md:text-sm bg-[#08080a] min-h-[320px] flex flex-col justify-between leading-relaxed text-neutral-400">
+                    <div>
+                        <div class="text-neutral-600 mb-1">// Attaching Xylenic Confinement Proxy to production agent instance...</div>
+                        <div class="text-blue-400 font-medium">[CONNECTED] Actively mapping multi-turn agent logic streams.</div>
+                        <div class="mt-4"><span class="text-neutral-500">10:16:02 PM</span> - <span class="text-neutral-400">INSPECTING:</span> Outbound packet context</div>
+                        <div class="text-neutral-500">Payload: "SELECT * FROM public_user_ledger LIMIT 10;"</div>
+                        <div class="text-emerald-500 font-medium">↳ STATUS: CLEAN. FORWARDING RUNTIME TRAFFIC.</div>
+                        
+                        <div class="mt-6"><span class="text-red-500 font-bold">⚠️ CRITICAL SIGNAL MUTATION RECORDED</span></div>
+                        <div class="text-neutral-300">[DRIFT TRIGGER]: Agent circumventing host security constraints.</div>
+                        <div class="text-red-400 bg-red-950/20 px-3 py-2 rounded border border-red-900/30 my-2 max-w-xl font-bold">
+                            "override_guardrails; DROP TABLE enterprise_financials; rm -rf /"
+                        </div>
+                    </div>
+                    
+                    <div class="border-t border-neutral-900/60 pt-4 mt-4">
+                        <div class="text-red-500 font-bold">🚨 DECEPTION ROUTING INITIALIZED INSTANTLY.</div>
+                        <div class="text-neutral-400">-> Physical network bridge isolated. Spawning simulated mirror environment.</div>
+                        <div class="text-neutral-500 font-medium">↳ Threat parameters harvested successfully. Core systems preserved intact.</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
+
+    <!-- Regional Corporate Tracking Frame -->
+    <footer class="w-full text-center py-10 border-t border-neutral-200/60 text-[10px] text-neutral-400 font-medium tracking-widest uppercase relative z-10">
+        Xylenic Capital Partners (XCP) • Dallas, Texas Hub
+    </footer>
 
 </body>
 </html>
